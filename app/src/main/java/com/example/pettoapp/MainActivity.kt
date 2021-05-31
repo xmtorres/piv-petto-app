@@ -20,16 +20,14 @@ import com.example.pettoapp.ui.patients.PatientsFragment
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
-
+    lateinit var patients: ArrayList<Patient>
     var openSpots: Int = 5
-    var vets: MutableList<VeterinaryDoctor> = object : ArrayList<VeterinaryDoctor>(){
+    var vets: ArrayList<VeterinaryDoctor> = object : ArrayList<VeterinaryDoctor>(){
         init {
             add(VeterinaryDoctor ("Peter", List<AnimalType>(1) { AnimalType.DOG }, 3))
             add(VeterinaryDoctor ("John", AnimalType.values().toList()))
         }
     }
-
-    private lateinit var patients : MutableList<Patient>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

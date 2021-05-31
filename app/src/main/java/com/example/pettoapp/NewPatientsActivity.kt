@@ -1,14 +1,17 @@
 package com.example.pettoapp
 
-import androidx.appcompat.app.AppCompatActivity
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
+import androidx.appcompat.app.AppCompatActivity
 import com.example.pettoapp.model.AnimalType
 import com.example.pettoapp.model.Patient
+
 
 class NewPatientsActivity : AppCompatActivity() {
 
@@ -35,7 +38,10 @@ class NewPatientsActivity : AppCompatActivity() {
         initializeSpinner(typeSpinner)
 
         saveButton.setOnClickListener{
-            createPatient()
+            val resultIntent = Intent()
+            resultIntent.putExtra("patient", createPatient())
+            setResult(Activity.RESULT_OK, resultIntent)
+            finish()
         }
 
     }
@@ -62,11 +68,13 @@ class NewPatientsActivity : AppCompatActivity() {
     }
 
     private fun createPatient(): Patient{
-        var patient = Patient(nameInput.text.toString(),
+        var patient = Patient(
+            nameInput.text.toString(),
             AnimalType.valueOf(typeSpinner.selectedItem.toString()),
             breedInput.text.toString(),
             ageInput.text.toString().toInt(),
-            causeInput.text.toString())
+            causeInput.text.toString()
+        )
 
         Log.d("PATIENT SAVED:", patient.toString())
 
