@@ -7,6 +7,7 @@ class Patient(
         var age: Int,
         var cause: String
 ){
-
-
+        override fun toString(): String {
+                return "{ name:${this.name}, type:${this.type}, breed:${this.breed}, age:${this.age}, cause:${this.cause}  }"
+        }
 }

@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     var vets: MutableList<VeterinaryDoctor> = object : ArrayList<VeterinaryDoctor>(){
         init {
             add(VeterinaryDoctor ("Peter", List<AnimalType>(1) { AnimalType.DOG }, 3))
-            add(VeterinaryDoctor ("John", List<AnimalType>(1) { AnimalType.DOG }))
+            add(VeterinaryDoctor ("John", AnimalType.values().toList()))
         }
     }
 
@@ -62,13 +62,5 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
-    }
-
-    fun getDoctors(): MutableList<VeterinaryDoctor>{
-        return vets
-    }
-
-    fun currentOpenSpots(): Int{
-        return openSpots
     }
 }

@@ -34,16 +34,18 @@ class PatientsFragment : Fragment() {
 
         var newPatientButton: FloatingActionButton = root.findViewById(R.id.newpatient)
 
-        newPatientButton.setOnClickListener { view ->
-            toNewPatientActivity(view, act)
+        if(act.openSpots > 0)
+            newPatientButton.setOnClickListener { view ->
+                toNewPatientActivity(view)
+            }
+        else {
+            newPatientButton.isEnabled = false
         }
         return root
     }
 
-    fun toNewPatientActivity(view: View, activity: MainActivity){
-        var data = Bundle()
-        data.putInt("open_spots", activity.currentOpenSpots())
-        val intent = Intent(view.context, NewPatientsActivity::class.java).putExtra("data", data)
+    fun toNewPatientActivity(view: View){
+        val intent = Intent(view.context, NewPatientsActivity::class.java)
         startActivity(intent)
     }
 }
