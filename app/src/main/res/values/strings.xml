@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">ペット App</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_patients">Patients</string>
+    <string name="menu_diagnoses">Diagnoses</string>
+    <string name="title_activity_patients">PatientsActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+
+    <!-- COMMON STRINGS -->
+    <string name="name">Name</string>
+    <string name="age">Age</string>
+    <string name="save">Save</string>
+    <string name="patients">Patients</string>
+    <string name="diagnoses">Diagnoses</string>
+
+    <!-- NEW PATIENTS ACTIVITY -->
+    <string name="newpatients_title">New Patient</string>
+    <string name="newpatients_breed">Breed</string>
+    <string name="newpatients_cause">Cause of visit</string>
+
+    <!-- NEW DIAGNOSIS ACTIVITY -->
+    <string name="diagnosis_title">New Diagnosis</string>
+    <string name="diagnosis_patient">Patient</string>
+    <string name="diagnosis_dx">Dx</string>
+    <string name="diagnosis_cause">Cause</string>
+    <string name="diagnosis_meds">Meds</string>
+    <string name="diagnosis_treatment">Treatment</string>
+    <string name="diagnosis_rest">Should rest:</string>
+
+</resources>

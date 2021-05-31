@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.pettoapp.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_patients"
+        android:name="com.example.pettoapp.ui.patients.PatientsFragment"
+        android:label="@string/menu_patients"
+        tools:layout="@layout/fragment_patients" />
+
+    <fragment
+        android:id="@+id/nav_diagnoses"
+        android:name="com.example.pettoapp.ui.diagnoses.DiagnosesFragment"
+        android:label="@string/menu_diagnoses"
+        tools:layout="@layout/fragment_diagnoses" />
+</navigation>

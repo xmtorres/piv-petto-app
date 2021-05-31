@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_vet_basic"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_patients"
+            android:icon="@drawable/ic_patients"
+            android:title="@string/menu_patients" />
+        <item
+            android:id="@+id/nav_diagnoses"
+            android:icon="@drawable/ic_vet_med_report"
+            android:title="@string/menu_diagnoses" />
+    </group>
+</menu>
