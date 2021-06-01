@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -17,6 +18,7 @@ import com.example.pettoapp.NewPatientsActivity
 import com.example.pettoapp.R
 import com.example.pettoapp.model.Patient
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
 import java.io.Serializable
 
 class PatientsFragment : Fragment() {
@@ -58,6 +60,8 @@ class PatientsFragment : Fragment() {
         if (result.resultCode == Activity.RESULT_OK) {
             var patient = result.data?.extras?.getSerializable("patient")
             act.patients.add(patient as Patient)
+        } else {
+            Toast.makeText(activity, "Couldn't create patient!", Toast.LENGTH_SHORT)
         }
     }
 

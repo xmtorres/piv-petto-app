@@ -2,6 +2,7 @@ package com.example.pettoapp
 
 import android.os.Bundle
 import android.view.Menu
+import androidx.activity.result.contract.ActivityResultContracts
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -12,6 +13,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.pettoapp.model.AnimalType
+import com.example.pettoapp.model.Diagnosis
 import com.example.pettoapp.model.Patient
 import com.example.pettoapp.model.VeterinaryDoctor
 import com.example.pettoapp.ui.diagnoses.DiagnosesFragment
@@ -20,7 +22,8 @@ import com.example.pettoapp.ui.patients.PatientsFragment
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
-    lateinit var patients: ArrayList<Patient>
+    var patients: ArrayList<Patient> = ArrayList<Patient>()
+    var diagnoses: ArrayList<Diagnosis> = ArrayList<Diagnosis>()
     var openSpots: Int = 5
     var vets: ArrayList<VeterinaryDoctor> = object : ArrayList<VeterinaryDoctor>(){
         init {
@@ -45,9 +48,6 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_home, R.id.nav_patients, R.id.nav_diagnoses), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-
-        var patientsFragment = PatientsFragment()
-        var diagnosesFragment = DiagnosesFragment()
 
     }
 
